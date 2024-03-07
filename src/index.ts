@@ -4,8 +4,8 @@ import morgan from 'morgan';
 import helmet from 'helmet';
 import getEnv from './helpers/getEnv.js';
 import connectToDB from './initializers/db.js';
-import sampleRouter from './routes/sample.route.js';
 import errorHandler from './middleware/errorHandler.js';
+import registerRouter from './routes/register.route.js';
 
 const app = express();
 const PORT = getEnv.PORT;
@@ -19,7 +19,7 @@ app.use(helmet());
 if (getEnv.ENVIRONMENT === 'dev') app.use(morgan('dev'));
 
 // Routes
-app.use('/register', sampleRouter);
+app.use('/register', registerRouter);
 
 app.use(errorHandler);
 
