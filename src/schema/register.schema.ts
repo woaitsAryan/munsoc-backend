@@ -53,6 +53,6 @@ export const DelegatesSchema = z.object({
     HeadDelegate: z.string(),
     EmailID: z.string(),
     ContactNumber: z.string(),
-    DelegationStrength: z.number(),
+    DelegationStrength: z.string().transform((val) => parseInt(val, 10)),
     AllotmentPreferences: z.string(),
 });

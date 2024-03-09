@@ -1,6 +1,24 @@
 version: "3.6"
 services:
   munsoc-backend:
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: munsoc-backend
     ports:
       - "8010:8010"
+    depends_on:
+      - mongo-db
+
+  mongo-db:
+    image: mongo:latest 
+    container_name: mongo-container-munsoc
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db  
+
+volumes:
+  mongo-data:
+    name: mongo-data-ffcs
+    driver: local
