@@ -16,12 +16,13 @@ services:
     ports:
       - "27017:27017"
     environment:
-      MONGO_INITDB_ROOT_USERNAME: ${MONGO_USERNAME}
-      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_PASSWORD}
+      - MONGO_INITDB_DATABASE=admin 
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD}
     volumes:
       - mongo-data:/data/db  
 
 volumes:
   mongo-data:
-    name: mongo-data-ffcs
+    name: mongo-data-munsoc
     driver: local
