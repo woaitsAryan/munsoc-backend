@@ -1,10 +1,12 @@
 import { z } from 'zod';
 
 export const ExternalUserSchema = z.object({
-    participantName: z.string(),
-    ParticipantRegNumber: z.string(),
+    ParticipantName: z.string(),
+    ParticipantGender: z.string(),
     ParticipantPhone: z.string(),
     ParticipantEmail: z.string(),
+    ParticipantOrganizationName: z.string(),
+    ParticipantAccomodation: z.string(),
     CommitteePreference1: z.string(),
     Committee1AllotmentPreference1: z.string(),
     Committee1AllotmentPreference2: z.string(),
@@ -17,14 +19,14 @@ export const ExternalUserSchema = z.object({
     Committee3AllotmentPreference1: z.string(),
     Committee3AllotmentPreference2: z.string(),
     Committee3AllotmentPreference3: z.string(),
-    MUNDelegateCount: z.number(),
+    MUNDelegateCount: z.string().transform((val) => parseInt(val, 10)),
     MUNDelegateExperience: z.string(),
-    MUNExecutiveCount: z.number(),
+    MUNExecutiveCount: z.string().transform((val) => parseInt(val, 10)),
     MUNExecutiveExperience: z.string(),
 });
 
 export const InternalUserSchema = z.object({
-    participantName: z.string(),
+    ParticipantName: z.string(),
     ParticipantRegNumber: z.string(),
     ParticipantPhone: z.string(),
     ParticipantEmail: z.string(),
@@ -40,9 +42,9 @@ export const InternalUserSchema = z.object({
     Committee3AllotmentPreference1: z.string(),
     Committee3AllotmentPreference2: z.string(),
     Committee3AllotmentPreference3: z.string(),
-    MUNDelegateCount: z.number(),
+    MUNDelegateCount: z.string().transform((val) => parseInt(val, 10)),
     MUNDelegateExperience: z.string(),
-    MUNExecutiveCount: z.number(),
+    MUNExecutiveCount: z.string().transform((val) => parseInt(val, 10)),
     MUNExecutiveExperience: z.string(),
 });
 

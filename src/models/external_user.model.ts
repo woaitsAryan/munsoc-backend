@@ -1,10 +1,12 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface ExternalUserType extends Document {
-    participantName: string;
-    ParticipantRegNumber: string;
+    ParticipantName: string;
     ParticipantPhone: string;
     ParticipantEmail: string;
+    ParticipantGender: string;
+    ParticipantOrganizationName: string;
+    ParticipantAccomodation: string;
     CommitteePreference1: string;
     Committee1AllotmentPreference1: string;
     Committee1AllotmentPreference2: string;
@@ -24,11 +26,7 @@ export interface ExternalUserType extends Document {
 }
 
 export const ExternalUserSchema = new Schema({
-    participantName: {
-        type: String,
-        required: true,
-    },
-    ParticipantRegNumber: {
+    ParticipantName: {
         type: String,
         required: true,
     },
@@ -37,6 +35,18 @@ export const ExternalUserSchema = new Schema({
         required: true,
     },
     ParticipantEmail: {
+        type: String,
+        required: true,
+    },
+    ParticipantGender: {
+        type: String,
+        required: true,
+    },
+    ParticipantOrganizationName: {
+        type: String,
+        required: true,
+    },
+    ParticipantAccomodation: {
         type: String,
         required: true,
     },

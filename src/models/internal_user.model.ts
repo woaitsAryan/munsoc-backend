@@ -1,7 +1,7 @@
 import mongoose, { Schema, Document } from 'mongoose';
 
 export interface InternalUserType extends Document{
-    participantName: string;
+    ParticipantName: string;
     ParticipantRegNumber: string;
     ParticipantPhone: string;
     ParticipantEmail: string;
@@ -24,7 +24,7 @@ export interface InternalUserType extends Document{
 }
 
 export const InternalUserSchema = new Schema({
-    participantName: {
+    ParticipantName: {
         type: String,
         required: true,
     },
