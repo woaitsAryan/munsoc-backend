@@ -6,7 +6,6 @@ export interface DelegatesType extends Document {
     EmailID: string;
     ContactNumber: string;
     DelegationStrength: number;
-    AllotmentPreferences: string;
 }
 
 export const DelegatesSchema = new Schema({
@@ -25,10 +24,6 @@ export const DelegatesSchema = new Schema({
         required: true,
     }, DelegationStrength: {
         type: Number,
-        required: true,
-    },
-    AllotmentPreferences: {
-        type: String,
         required: true,
     },
 });
