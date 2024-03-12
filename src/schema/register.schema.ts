@@ -19,9 +19,9 @@ export const ExternalUserSchema = z.object({
     Committee3AllotmentPreference1: z.string(),
     Committee3AllotmentPreference2: z.string(),
     Committee3AllotmentPreference3: z.string(),
-    MUNDelegateCount: z.string().transform((val) => parseInt(val, 10)),
+    MUNDelegateCount: z.string(),
     MUNDelegateExperience: z.string(),
-    MUNExecutiveCount: z.string().transform((val) => parseInt(val, 10)),
+    MUNExecutiveCount: z.string(),
     MUNExecutiveExperience: z.string(),
 });
 
@@ -42,9 +42,9 @@ export const InternalUserSchema = z.object({
     Committee3AllotmentPreference1: z.string(),
     Committee3AllotmentPreference2: z.string(),
     Committee3AllotmentPreference3: z.string(),
-    MUNDelegateCount: z.string().transform((val) => parseInt(val, 10)),
+    MUNDelegateCount: z.string(),
     MUNDelegateExperience: z.string(),
-    MUNExecutiveCount: z.string().transform((val) => parseInt(val, 10)),
+    MUNExecutiveCount: z.string(),
     MUNExecutiveExperience: z.string(),
 });
 
@@ -53,5 +53,5 @@ export const DelegatesSchema = z.object({
     HeadDelegate: z.string(),
     EmailID: z.string(),
     ContactNumber: z.string(),
-    DelegationStrength: z.string().transform((val) => parseInt(val, 10)),
+    DelegationStrength: z.string(),
 });

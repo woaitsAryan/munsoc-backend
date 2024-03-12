@@ -19,9 +19,9 @@ export interface ExternalUserType extends Document {
     Committee3AllotmentPreference1: string;
     Committee3AllotmentPreference2: string;
     Committee3AllotmentPreference3: string;
-    MUNDelegateCount: number;
+    MUNDelegateCount: string;
     MUNDelegateExperience: string;
-    MUNExecutiveCount: number;
+    MUNExecutiveCount: string;
     MUNExecutiveExperience: string;
 }
 
@@ -99,7 +99,7 @@ export const ExternalUserSchema = new Schema({
         required: true,
     },
     MUNDelegateCount: {
-        type: Number,
+        type: String,
         required: true,
     },
     MUNDelegateExperience: {
@@ -107,7 +107,7 @@ export const ExternalUserSchema = new Schema({
         required: true,
     },
     MUNExecutiveCount: {
-        type: Number,
+        type: String,
         required: true,
     },
     MUNExecutiveExperience: {
