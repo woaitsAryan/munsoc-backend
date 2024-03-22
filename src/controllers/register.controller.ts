@@ -1,37 +1,37 @@
 import { Request, Response } from "express";
 import catchAsync from "../helpers/catchAsync.js";
-import { InternalUserSchema, ExternalUserSchema, DelegatesSchema } from "../schema/register.schema.js";
-import { InternalUser } from "../models/internal_user.model.js";
-import { ExternalUser } from "../models/external_user.model.js";
+import { DelegatesSchema } from "../schema/register.schema.js";
+// import { InternalUser } from "../models/internal_user.model.js";
+// import { ExternalUser } from "../models/external_user.model.js";
 import { DelegatesUser } from "../models/delegates.model.js";
 
 export const registerInternalController = catchAsync(
-    async (req: Request, res: Response) => {
+    async (_req: Request, res: Response) => {
+        return res.status(200).json({ message: 'Internal registration closed!' });
+        // const parsedData = InternalUserSchema.safeParse(req.body);
+        // if(!parsedData.success) return res.status(400).json({ message: 'Invalid data', errors: parsedData.error.errors });
+        // const data = parsedData.data;
 
-        const parsedData = InternalUserSchema.safeParse(req.body);
-        if(!parsedData.success) return res.status(400).json({ message: 'Invalid data', errors: parsedData.error.errors });
-        const data = parsedData.data;
-
-        const existingUser = await InternalUser.findOne({ ParticipantRegNumber: data.ParticipantRegNumber });
-        if(existingUser) return res.status(400).json({ message: 'User already exists' });
-        const user = new InternalUser(data);
-        await user.save();
-        return res.status(200).json({ message: 'User registered successfully' });
+        // const existingUser = await InternalUser.findOne({ ParticipantRegNumber: data.ParticipantRegNumber });
+        // if(existingUser) return res.status(400).json({ message: 'User already exists' });
+        // const user = new InternalUser(data);
+        // await user.save();
+        // return res.status(200).json({ message: 'User registered successfully' });
         
     })
 
 export const registerExternalController = catchAsync(
-    async (req: Request, res: Response) => {
+    async (_req: Request, res: Response) => {
+        return res.status(200).json({ message: 'External registration closed!' });
+        // const parsedData = ExternalUserSchema.safeParse(req.body);
+        // if(!parsedData.success) return res.status(400).json({ message: 'Invalid data', errors: parsedData.error.errors });
+        // const data = parsedData.data;
 
-        const parsedData = ExternalUserSchema.safeParse(req.body);
-        if(!parsedData.success) return res.status(400).json({ message: 'Invalid data', errors: parsedData.error.errors });
-        const data = parsedData.data;
-
-        const existingUser = await ExternalUser.findOne({ ParticipantPhone: data.ParticipantPhone });
-        if(existingUser) return res.status(400).json({ message: 'User already exists' });
-        const user = new ExternalUser(data);
-        await user.save();
-        return res.status(200).json({ message: 'User registered successfully' });
+        // const existingUser = await ExternalUser.findOne({ ParticipantPhone: data.ParticipantPhone });
+        // if(existingUser) return res.status(400).json({ message: 'User already exists' });
+        // const user = new ExternalUser(data);
+        // await user.save();
+        // return res.status(200).json({ message: 'User registered successfully' });
 
     })
 
