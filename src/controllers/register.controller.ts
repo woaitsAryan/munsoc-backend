@@ -7,7 +7,6 @@ import { DelegatesUser } from "../models/delegates.model.js";
 
 export const registerInternalController = catchAsync(
     async (req: Request, res: Response) => {
-
         const parsedData = InternalUserSchema.safeParse(req.body);
         if(!parsedData.success) return res.status(400).json({ message: 'Invalid data', errors: parsedData.error.errors });
         const data = parsedData.data;
@@ -22,7 +21,6 @@ export const registerInternalController = catchAsync(
 
 export const registerExternalController = catchAsync(
     async (req: Request, res: Response) => {
-
         const parsedData = ExternalUserSchema.safeParse(req.body);
         if(!parsedData.success) return res.status(400).json({ message: 'Invalid data', errors: parsedData.error.errors });
         const data = parsedData.data;
